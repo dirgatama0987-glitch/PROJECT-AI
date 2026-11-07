@@ -34,6 +34,6 @@ export default async function handler(req, res) {
     const reply = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("\n");
     res.status(200).json({ reply: reply || "(tidak ada jawaban)" });
   } catch (e) {
-    res.status(500).json({ error: "Server error: " + e.message });
+       res.status(500).json({ error: "Server error: " + e.message });
   }
 }
